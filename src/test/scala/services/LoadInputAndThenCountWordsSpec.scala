@@ -15,9 +15,9 @@ class LoadInputAndThenCountWordsSpec extends FunSuite {
         |seven eight nine
         |""".stripMargin
     }
-    val filepath = "~/imaginary.txt"
-    val actual = LoadInputAndThenCountWords.fromFile(filepath, laodInput)
-    val expected = MultiCountResult(
+    val filepath  = "~/imaginary.txt"
+    val actual    = LoadInputAndThenCountWords.fromFile(filepath, laodInput)
+    val expected  = MultiCountResult(
       results = List(
         CountResult(Command.Line, Amount(3)),
         CountResult(Command.Word, Amount(9)),
@@ -30,9 +30,10 @@ class LoadInputAndThenCountWordsSpec extends FunSuite {
   }
 
   test("return None since loadInput failed") {
-    val input = scala.util.Failure(new NoSuchFileException("file does not exist"))
+    val input    =
+      scala.util.Failure(new NoSuchFileException("file does not exist"))
     val filepath = "~/imaginary.txt"
-    val actual = LoadInputAndThenCountWords.fromFile(filepath, input)
+    val actual   = LoadInputAndThenCountWords.fromFile(filepath, input)
 
     assertEquals(actual, None)
   }

@@ -5,7 +5,10 @@ import munit.FunSuite
 class CountResultSpec extends FunSuite {
 
   test("return correct toString for plural Character case") {
-    assertEquals(CountResult(Command.Character, Amount(500)).toString, "500 characters")
+    assertEquals(
+      CountResult(Command.Character, Amount(500)).toString,
+      "500 characters",
+    )
   }
 
   test("return correct toString for plural Line case") {
@@ -21,7 +24,10 @@ class CountResultSpec extends FunSuite {
   }
 
   test("return correct toString for singular Character case") {
-    assertEquals(CountResult(Command.Character, Amount(1)).toString, "1 character")
+    assertEquals(
+      CountResult(Command.Character, Amount(1)).toString,
+      "1 character",
+    )
   }
 
   test("return correct toString for singular Line case") {

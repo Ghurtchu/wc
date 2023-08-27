@@ -21,9 +21,9 @@ object Counter {
     input: String,
   ): BigInt =
     command match {
-      case Command.Byte => input.getBytes.length
+      case Command.Byte      => input.getBytes.length
       case Command.Character => input.length
-      case Command.Word => (input split "\\s").count(_.nonEmpty)
-      case Command.Line => (input split "\n").length
+      case Command.Word      => (input split "\\s").count(_.nonEmpty)
+      case Command.Line      => (input split "\n").length
     }
 }

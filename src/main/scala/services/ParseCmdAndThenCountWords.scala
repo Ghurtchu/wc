@@ -43,13 +43,13 @@ object ParseCmdAndThenCountWords {
   def fromFile(filepath: String): ParseCmdAndThenCountWords =
     of {
       case _: NoSuchFileException => FileNotFound(filepath)
-      case _ => Unknown
+      case _                      => Unknown
     }
 
   private def of(mapError: Throwable => Error): ParseCmdAndThenCountWords =
     (cmd, loadInput) =>
       for {
-        cmd <- parseCmd(cmd)
+        cmd   <- parseCmd(cmd)
         input <- loadInput.toEither.left.map(mapError)
       } yield countWords(cmd, input)
 
