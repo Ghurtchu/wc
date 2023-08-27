@@ -22,7 +22,7 @@ object Main {
         LoadInputAndThenCountWords
           .fromFile(filepath, loadInputFromFile(filepath))
           .logResult()
-      case _                           => println("Incorrect usage, please refer to manual")
+      case _ => println("Incorrect usage, please refer to manual")
     }
 
   private def loadInputFromFile(filepath: String): Try[String] =
