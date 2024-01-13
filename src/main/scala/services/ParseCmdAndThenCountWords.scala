@@ -8,10 +8,7 @@ import java.nio.file.NoSuchFileException
 import scala.util.Try
 
 trait ParseCmdAndThenCountWords {
-  def apply(
-    cmd: String,
-    loadInput: => Try[String],
-  ): Either[Error, CountResult]
+  def apply(cmd: String, loadInput: => Try[String]): Either[Error, CountResult]
 }
 
 object ParseCmdAndThenCountWords {

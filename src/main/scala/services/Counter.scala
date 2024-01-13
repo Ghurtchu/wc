@@ -7,6 +7,7 @@ trait Counter {
 }
 
 object Counter {
+
   def fromCommand(command: Command): Counter =
     (input: String) => {
       val amount = Amount

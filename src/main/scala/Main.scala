@@ -14,11 +14,11 @@ object Main {
         ParseCmdAndThenCountWords
           .fromFile(filepath)(cmd, loadInputFromFile(filepath))
           .logResult()
-      case s"-$cmd" :: Nil             =>
+      case s"-$cmd" :: Nil =>
         ParseCmdAndThenCountWords
           .fromStdIn(cmd, loadInputFromStdIn)
           .logResult()
-      case filepath :: Nil             =>
+      case filepath :: Nil =>
         LoadInputAndThenCountWords
           .fromFile(filepath, loadInputFromFile(filepath))
           .logResult()

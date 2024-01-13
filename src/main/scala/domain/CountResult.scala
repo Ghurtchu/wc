@@ -1,9 +1,7 @@
 package domain
 
-final case class CountResult(
-  command: Command,
-  amount: Amount,
-) {
+final case class CountResult(command: Command, amount: Amount) {
+
   override def toString: String =
     s"$amount $command$maybePluralPostfix"
 

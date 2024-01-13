@@ -5,8 +5,8 @@ final case class Amount private (value: BigInt) extends AnyVal {
 }
 
 object Amount {
-  def fromBigInt(bigInt: BigInt): Option[Amount] =
-    Option.when(bigInt >= 0)(new Amount(bigInt))
+  def fromBigInt(n: BigInt): Option[Amount] =
+    Option.when(n >= 0)(new Amount(n))
 
   def empty: Amount = Amount(0)
 }
