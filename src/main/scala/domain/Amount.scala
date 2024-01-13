@@ -5,6 +5,7 @@ final case class Amount private (value: BigInt) extends AnyVal {
 }
 
 object Amount {
+
   def fromBigInt(n: BigInt): Option[Amount] =
     Option.when(n >= 0)(new Amount(n))
 

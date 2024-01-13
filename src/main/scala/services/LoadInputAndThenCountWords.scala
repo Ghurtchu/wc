@@ -10,6 +10,7 @@ trait LoadInputAndThenCountWords {
 }
 
 object LoadInputAndThenCountWords {
+
   def fromFile: LoadInputAndThenCountWords = (filepath, input) =>
     input.map { raw =>
       val countResults = DefaultCommands.map(Counter.fromCommand(_).count(raw))
